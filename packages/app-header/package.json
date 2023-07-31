@@ -1,0 +1,25 @@
+{
+  "name": "app-header",
+  "version": "0.0.0",
+  "description": "This package holds the component responsible to generate the header, navigation and user info for the application. The login process would be controlled by this module",
+  "keywords": [
+    "header"
+  ],
+  "author": "Supriya M <supriya.minnasandram@ck12.org>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/app-header.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/app-header.test.js"
+  },
+  "dependencies": {
+    "app-atoms": "*"
+  }
+}
