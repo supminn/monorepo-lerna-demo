@@ -8,7 +8,7 @@ export default defineConfig({
     lib: {
       entry: "src/exportable.js",
       name: "Exportable",
-      fileName: "index",
+      fileName: "exportable",
     },
     rollupOptions: {
       output: {
