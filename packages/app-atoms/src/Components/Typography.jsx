@@ -14,6 +14,7 @@ const htmlElementMapping = {
   p: "p",
   span: "span",
 };
+
 const fontStylesMapping = {
   title: {
     fontSize: 65 / 16,
@@ -78,14 +79,10 @@ const getFontStyleMapping = (variant) => {
   return fontProps;
 };
 
-const TypographyRoot = ({ variant, children, ...others }) => {
+const StyledTypography = styled(({ variant, children, ...otherProps }) => {
   const ElementToRender = htmlElementMapping[variant] || "span";
-  return <ElementToRender {...others}>{children}</ElementToRender>;
-};
-
-const StyledTypography = styled(({ children, ...otherProps }) => (
-  <TypographyRoot {...otherProps}>{children}</TypographyRoot>
-))`
+  return <ElementToRender {...otherProps}>{children}</ElementToRender>;
+})`
   ${({ ...props }) => css`
     font-size: ${getFontStyleMapping(props.variant).fontSize}rem;
     font-weight: ${getFontStyleMapping(props.variant).fontWeight};
@@ -128,6 +125,7 @@ Typography.propTypes = {
   color: PropTypes.string,
   children: PropTypes.string,
 };
+
 Typography.defaultProps = {
   variant: "p",
   color: "black",
