@@ -1,4 +1,4 @@
-import { Button, Typography } from "app-atoms";
+import { Button, Image, Typography } from "app-atoms";
 import reactLogo from "./assets/react.svg";
 import { useState } from "react";
 import Signin from "./Components/SignIn";
@@ -27,7 +27,7 @@ function App() {
         </Modal>
       )}
       <header>
-        <img src={reactLogo} alt="react-logo" />
+        <Image src={reactLogo} title="react-logo" />
         <Typography variant={"title"}>My Video Library</Typography>
         <Typography variant={"sectionTitle"}>This is my subtitle</Typography>
         <Typography variant={"subTitle"}>This is my subtitle</Typography>

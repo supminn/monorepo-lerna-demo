@@ -97,13 +97,13 @@ const StyledTypography = styled(({ variant, children, ...otherProps }) => {
   `}
 `;
 
-const Typography = ({ variant, children, ...others }) => {
+function Typography({ variant, children, ...others }) {
   return (
     <StyledTypography variant={variant} {...others}>
       {children}
     </StyledTypography>
   );
-};
+}
 
 Typography.propTypes = {
   variant: PropTypes.oneOfType([
