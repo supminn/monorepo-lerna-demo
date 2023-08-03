@@ -7,7 +7,7 @@ const Form = styled.form`
 
 const Actions = styled.section`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `;
 

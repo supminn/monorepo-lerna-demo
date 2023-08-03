@@ -9,7 +9,8 @@ const ModalWrapper = styled.div`
   transform: translateX(-50%) translateY(-50%);
   width: 80%;
   height: 80%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #000080;
   padding: 1rem;
   border-radius: 1rem;
 `;
