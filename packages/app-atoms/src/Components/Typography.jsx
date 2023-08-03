@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
-const { string, func } = PropTypes;
 const htmlElementMapping = {
   title: "h1",
   sectionTitle: "h2",
@@ -14,7 +13,6 @@ const htmlElementMapping = {
   h6: "h6",
   p: "p",
   span: "span",
-  link: "a",
 };
 const fontStylesMapping = {
   title: {
@@ -72,10 +70,6 @@ const fontStylesMapping = {
     lineHeight: 22 / 18,
     fontWeight: "normal",
   },
-  link: {
-    fontSize: 16 / 16,
-    lineHeight: 22 / 18,
-  },
 };
 
 const getFontStyleMapping = (variant) => {
@@ -89,8 +83,8 @@ const TypographyRoot = ({ variant, children, ...others }) => {
   return <ElementToRender {...others}>{children}</ElementToRender>;
 };
 
-const StyledTypography = styled(({ ...otherProps }) => (
-  <TypographyRoot {...otherProps} />
+const StyledTypography = styled(({ children, ...otherProps }) => (
+  <TypographyRoot {...otherProps}>{children}</TypographyRoot>
 ))`
   ${({ ...props }) => css`
     font-size: ${getFontStyleMapping(props.variant).fontSize}rem;
@@ -98,12 +92,6 @@ const StyledTypography = styled(({ ...otherProps }) => (
     line-height: ${getFontStyleMapping(props.variant).lineHeight};
     color: ${props.color};
     text-transform: ${props.variant === "subtitle" ? "uppercase" : ""};
-    ${props.variant === "textLink"
-      ? css`
-          cursor: pointer;
-          text-decoration: none;
-        `
-      : ""};
     ${props.textAlign
       ? css`
           text-align: ${props.textAlign};
@@ -119,32 +107,30 @@ const Typography = ({ variant, children, ...others }) => {
     </StyledTypography>
   );
 };
+
 Typography.propTypes = {
   variant: PropTypes.oneOfType([
     PropTypes.oneOf([
+      "title",
+      "sectionTitle",
+      "subtitle",
       "h1",
       "h2",
       "h3",
       "h4",
       "h5",
       "h6",
-      "subtitle",
-      "heroTitle",
-      "flexbookTitle",
       "p",
       "span",
-      "textLink",
     ]),
     PropTypes.string,
   ]),
-  color: string,
-  textTransform: string,
-  href: string,
-  onClick: func,
-  theme: PropTypes.shape({}),
+  color: PropTypes.string,
+  children: PropTypes.string,
 };
 Typography.defaultProps = {
   variant: "p",
   color: "black",
+  children: "Placeholder for text",
 };
 export { Typography };

@@ -1,69 +1,50 @@
-import React from "react";
-import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
-const InputStyled = styled(
-  React.forwardRef(({ size, theme, ...otherProps }, forwardedref) => (
-    <input ref={forwardedref} {...otherProps} />
-  ))
-)`
-  ${({ theme, ...props }) => css`
-    ${() => {
-      const spacing = {
-        topBottom: 2,
-        leftRight: 3,
-        ...(props.size === "small" && { topBottom: 1, leftRight: 2 }),
-        ...(props.size === "large" && { topBottom: 3, leftRight: 4 }),
-      };
-      return css`
-        padding: ${theme.space[spacing.topBottom]}rem
-          ${theme.space[spacing.leftRight]}rem;
-      `;
-    }}
-    font-size: ${theme.fontSizes[props.size]}rem;
-    font-weight: ${theme.fontWeights.normal};
-    line-height: ${theme.lineHeights.body}rem;
-    color: ${theme.colors.darkText};
-    border: ${theme.borders.medium} ${theme.colors.borderColor};
-    border-radius: ${theme.radii.base};
-    transition: ${theme.transition(200)};
-    background-color: ${theme.colors.white};
-    width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    &:focus-visible,
-    &[data-focus-visible] {
-      background-color: ${theme.colors.neutral};
-      border: ${theme.borders.medium} ${theme.colors.secondary};
-    }
-    ${isSafari &&
-    css`
-      &:focus {
-        background-color: ${theme.colors.neutral};
-        border: ${theme.borders.medium} ${theme.colors.secondary};
-      }
-    `}
-    &:disabled, 
-    &[aria-disabled="true"] {
-      background-color: ${theme.colors.secondary100};
-    }
-  `}
+const StyledTextArea = styled.textarea`
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  display: inline-block;
 `;
 
-const Input = React.forwardRef(({ children, ...props }, forwardedRef) => {
-  return (
-    <InputStyled {...props} innerRef={forwardedRef}>
-      {children}
-    </InputStyled>
+const StyledInput = styled.input`
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.9);
+  cursor: ${(props) => (props.cursorStyle ? "not-allowed" : "text")};
+  font-size: 1rem;
+  font-family: inherit;
+  height: 4rem;
+  margin: 0;
+  padding: 0;
+  resize: none;
+  outline: none;
+  width: 90%;
+`;
+function Input(props) {
+  return props.mutliLine ? (
+    <StyledTextArea {...props} />
+  ) : (
+    <StyledInput {...props} />
   );
-});
+}
 
 Input.propTypes = {
+  mutliLine: PropTypes.bool,
   size: PropTypes.oneOf(["small", "medium", "large"]),
-  theme: PropTypes.shape({}),
+  submitHandler: PropTypes.func,
+  hideButton: PropTypes.bool,
 };
+
 Input.defaultProps = {
+  mutliLine: false,
   size: "medium",
-  theme: atomTheme,
+  submitHandler: () => {},
+  hideButton: false,
 };
+
 export { Input };
