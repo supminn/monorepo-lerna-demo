@@ -9,4 +9,4 @@ Image.propTypes = {
   title: PropTypes.string,
 };
 
-export default Image;
+export { Image };

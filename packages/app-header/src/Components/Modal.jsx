@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Button, Typography } from "app-atoms";
 
 const ModalWrapper = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 80%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 1rem;
 `;
 
 const ModalContent = styled.div`
@@ -19,18 +20,10 @@ const ModalContent = styled.div`
   border-radius: 5px;
 `;
 
-const ModalHeader = styled.h3`
-  margin-top: 0;
-`;
-
-const ModalActions = styled.div`
+const ModalHeader = styled.section`
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-`;
-
-const ModalButton = styled.button`
-  margin-left: 10px;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 function Modal(props) {
@@ -39,12 +32,13 @@ function Modal(props) {
   }
   return (
     <ModalWrapper>
-      <ModalHeader>{props.title}</ModalHeader>
+      <ModalHeader>
+        <Typography variant={"h3"}>{props.title}</Typography>
+        <Button color="warning" variant="outline" onClick={props.onCloseModal}>
+          Close
+        </Button>
+      </ModalHeader>
       <ModalContent>{props.children}</ModalContent>
-      <ModalActions>
-        <ModalButton onClick={props.onCloseModal}>Cancel</ModalButton>
-        <ModalButton onClick={props.onSubmitConfirm}>Confirm</ModalButton>
-      </ModalActions>
     </ModalWrapper>
   );
 }

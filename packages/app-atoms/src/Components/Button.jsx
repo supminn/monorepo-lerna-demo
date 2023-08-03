@@ -11,6 +11,7 @@ const colorsMap = {
 const StyledButton = styled.button`
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
+  margin: 0.5rem;
   background-color: ${(props) => {
     switch (props.variant) {
       case "outline":

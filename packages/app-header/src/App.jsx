@@ -7,9 +7,7 @@ import Modal from "./Components/Modal";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-  console.log("Turbo 🚀 ~ App ~ showModal:", showModal);
   const [signIn, setSignIn] = useState(null);
-  console.log("Turbo 🚀 ~ App ~ signIn:", signIn);
 
   const openSigninModal = (flag) => {
     setSignIn(flag);
@@ -21,7 +19,7 @@ function App() {
       {showModal && (
         <Modal
           show={showModal}
-          title="User Action"
+          title={signIn ? "Sign In" : "Sign Up"}
           onCloseModal={() => setShowModal(false)}>
           {signIn ? <Signin /> : <SignUp />}
         </Modal>
@@ -29,7 +27,9 @@ function App() {
       <header>
         <Image src={reactLogo} title="react-logo" />
         <Typography variant={"title"}>My Video Library</Typography>
-        <Typography variant={"sectionTitle"}>This is my subtitle</Typography>
+        <Typography variant={"sectionTitle"}>
+          This is my sectiontitle
+        </Typography>
         <Typography variant={"subTitle"}>This is my subtitle</Typography>
         <div>
           <Button

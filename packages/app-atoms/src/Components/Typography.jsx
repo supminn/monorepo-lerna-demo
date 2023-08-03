@@ -84,6 +84,8 @@ const StyledTypography = styled(({ variant, children, ...otherProps }) => {
   return <ElementToRender {...otherProps}>{children}</ElementToRender>;
 })`
   ${({ ...props }) => css`
+    margin-block-start: 0.75rem;
+    margin-block-end: 0.75rem;
     font-size: ${getFontStyleMapping(props.variant).fontSize}rem;
     font-weight: ${getFontStyleMapping(props.variant).fontWeight};
     line-height: ${getFontStyleMapping(props.variant).lineHeight};
