@@ -22,13 +22,13 @@ const fontStylesMapping = {
     lineHeight: 73 / 65,
   },
   sectionTitle: {
-    fontSize: 48 / 16,
+    fontSize: 30 / 16,
     fontWeight: 700,
     lineHeight: 1.125,
   },
   subtitle: {
     fontSize: 18 / 16,
-    fontWeight: 600,
+    fontWeight: 700,
     lineHeight: 22 / 18,
   },
   h1: {
