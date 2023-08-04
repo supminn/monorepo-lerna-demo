@@ -30,10 +30,3 @@ describe("Input component", () => {
   //     expect(container.firstChild).toHaveStyle("height: 9rem");
   //   });
 });
-
-//   test("calls the submitHandler prop when the input is submitted", () => {
-//     const mockSubmitHandler = jest.fn();
-//     const { getByTestId } = render(<Input submitHandler={mockSubmitHandler} />);
-//     fireEvent.submit(getByTestId("input"));
-//     expect(mockSubmitHandler).toHaveBeenCalled();
-//   });

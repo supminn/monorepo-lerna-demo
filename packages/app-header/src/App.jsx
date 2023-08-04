@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Image, Typography } from "app-atoms";
 import styled from "styled-components";
 import jsLogo from "./assets/javascript.svg";
 import Signin from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import Modal from "./Components/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutButtonPressed } from "./store/authSlice";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [signIn, setSignIn] = useState(null);
+  const dispatch = useDispatch();
+  const { email } = useSelector((state) => state.auth.login);
+
+  useEffect(() => {
+    if (email && showModal) {
+      setShowModal(false);
+    }
+  }, [email, showModal]);
 
   const openSigninModal = (flag) => {
     setSignIn(flag);
@@ -22,7 +32,11 @@ function App() {
           show={showModal}
           title={signIn ? "Sign In" : "Sign Up"}
           onCloseModal={() => setShowModal(false)}>
-          {signIn ? <Signin /> : <SignUp />}
+          {signIn ? (
+            <Signin setSignIn={setSignIn} />
+          ) : (
+            <SignUp setSignIn={setSignIn} />
+          )}
         </Modal>
       )}
       <FlexContainer>
@@ -31,17 +45,31 @@ function App() {
           <Typography variant={"h2"}>JS Videos</Typography>
         </FlexContainer>
         <FlexContainer>
-          <Button
-            variant={"text"}
-            onClick={() => console.log("redirect somewhere")}>
-            Playlist
-          </Button>
-          <Button variant={"solid"} onClick={() => openSigninModal(true)}>
-            Sign In
-          </Button>
-          <Button variant={"outline"} onClick={() => openSigninModal(false)}>
-            Sign Up
-          </Button>
+          {email ? (
+            <>
+              <Button
+                variant={"text"}
+                onClick={() => (window.location.href = "/playlist")}>
+                Playlist
+              </Button>
+              <Button
+                variant={"outline"}
+                onClick={() => dispatch(logoutButtonPressed())}>
+                Logout
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant={"solid"} onClick={() => openSigninModal(true)}>
+                Sign In
+              </Button>
+              <Button
+                variant={"outline"}
+                onClick={() => openSigninModal(false)}>
+                Sign Up
+              </Button>
+            </>
+          )}
         </FlexContainer>
       </FlexContainer>
     </Header>
