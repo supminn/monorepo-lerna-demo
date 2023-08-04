@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const StyledImage = styled.img`
+export const StyledImage = styled.img`
   height: auto;
   margin: 0.5rem;
   border-radius: 0.5rem;
@@ -22,14 +21,3 @@ const StyledImage = styled.img`
     }
   }};
 `;
-function Image({ src, title, size }) {
-  return <StyledImage src={src} alt={title} size={size} />;
-}
-
-Image.propTypes = {
-  src: PropTypes.string,
-  title: PropTypes.string,
-  size: PropTypes.string,
-};
-
-export { Image };

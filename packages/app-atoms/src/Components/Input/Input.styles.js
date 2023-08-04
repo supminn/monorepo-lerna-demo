@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const StyledTextArea = styled.textarea`
+export const StyledTextArea = styled.textarea`
   background-color: transparent;
   border: 2px solid #000080;
   border-radius: 0.5rem;
@@ -51,7 +50,7 @@ const StyledTextArea = styled.textarea`
   }};
 `;
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   background-color: transparent;
   border: 1px solid #000080;
   border-radius: 0.5rem;
@@ -78,26 +77,3 @@ const StyledInput = styled.input`
     }
   }};
 `;
-function Input(props) {
-  return props.mutliLine ? (
-    <StyledTextArea {...props} />
-  ) : (
-    <StyledInput {...props} />
-  );
-}
-
-Input.propTypes = {
-  mutliLine: PropTypes.bool,
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  submitHandler: PropTypes.func,
-  hideButton: PropTypes.bool,
-};
-
-Input.defaultProps = {
-  mutliLine: false,
-  size: "medium",
-  submitHandler: () => {},
-  hideButton: false,
-};
-
-export { Input };

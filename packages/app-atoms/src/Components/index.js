@@ -1,4 +1,4 @@
-export { Button } from "./Button";
-export { Input } from "./Input";
-export { Image } from "./Image";
-export { Typography } from "./Typography";
+export { Button } from "./Button/Button";
+export { Input } from "./Input/Input";
+export { Image } from "./Image/Image";
+export { Typography } from "./Typography/Typography";
