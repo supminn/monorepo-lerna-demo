@@ -14,30 +14,22 @@ const GridContainer = styled.section`
   margin: 1rem;
 `;
 
-function VideoList({ username }) {
+function VideoList() {
   const dispatch = useDispatch();
   const { videos: videoList, videoLoading } = useSelector(
     (state) => state.videos
   );
-  // TODO: test this logic
-  const filteredList = username
-    ? videoList.filter((item) => item.showUser)
-    : videoList;
-  // const { username: loginUser } = useSelector((state) => state.auth.login);
-  // TODO: handle logout state on /playlist
 
   useEffect(() => {
-    if (filteredList.length === 0) {
+    if (videoList.length === 0) {
       dispatch(startLoadingVideo());
       setTimeout(() => dispatch(setVideoList(videos)), 1000);
     }
-  }, [filteredList, dispatch]);
+  }, [videoList, dispatch]);
 
   return (
     <>
-      <Typography variant="sectionTitle">
-        MonoRepo Videos {username && `for ${username}`}
-      </Typography>
+      <Typography variant="sectionTitle">MonoRepo Videos</Typography>
       {videoLoading ? (
         <Typography variant={"subtitle"}>Loading...</Typography>
       ) : (

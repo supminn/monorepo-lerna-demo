@@ -16,13 +16,13 @@ export const authenticationSlice = createSlice({
     createNewUser: (state, { payload }) => {
       const newUser = {
         email: payload.email,
-        username: payload.username,
+        username: payload.name,
         password: payload.password,
       };
       state.userDB.push(newUser);
       const userDetails = {
         email: payload.email,
-        username: payload.username,
+        username: payload.name,
       };
       state.login = userDetails;
       sessionStorage.setItem("user", JSON.stringify(userDetails));

@@ -1,6 +1,6 @@
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { videos } from "../data";
+import { playlistVideos, videos } from "../data";
 import { Button, Typography } from "app-atoms";
 
 const Container = styled.section`
@@ -9,7 +9,14 @@ const Container = styled.section`
 
 function VideoDetails() {
   const { videoId } = useParams();
-  const videoDetails = videos.find((video) => video.id === videoId);
+  const navigate = useNavigate();
+
+  function goBack() {
+    navigate(-1);
+  }
+  const videoDetails = [...videos, ...playlistVideos].find(
+    (video) => video.id === videoId
+  );
   if (!videoDetails) {
     return null;
   }
@@ -17,9 +24,9 @@ function VideoDetails() {
   return (
     <Container>
       <div>
-        <Link to="/">
-          <Button color={"secondary"}>Back</Button>
-        </Link>
+        <Button color={"secondary"} onClick={goBack}>
+          Back
+        </Button>
       </div>
       <iframe
         width="853"

@@ -52,4 +52,20 @@ export const videos = [
   },
 ];
 
-// https://img.youtube.com/vi/<insert-youtube-video-id-here>/default.jpg
+export const playlistVideos = [
+  {
+    id: "1oxFYphTS4Y",
+    title: "Modern Lerna Walkthrough",
+    channel: "Nx - Smart, Fast, Extensible",
+  },
+  {
+    id: "BO1rwynFBLM",
+    title: "Lerna/Yarn to Nx: Faster Build Times + Better Dev Ergonomics",
+    channel: "Nx - Smart, Fast, Extensible",
+  },
+  {
+    id: "HqPOoU35xzA",
+    title: "Learning Lerna From the Lerna Team",
+    channel: "Nx - Smart, Fast, Extensible",
+  },
+];
