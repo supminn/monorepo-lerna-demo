@@ -38,7 +38,7 @@ We would have 3 packages
 ## References
 
 - [Foreign accent](https://www.youtube.com/watch?v=BO1rwynFBLM&t=114s)
-- [Crash course lerna](https://www.youtube.com/watch?v=WD5T-VMCTvY)
+- [IMP Crash course lerna](https://www.youtube.com/watch?v=WD5T-VMCTvY)
 - [Nx and Lerna: Integrated vs Package-Based Monorepos](https://www.youtube.com/watch?v=nVYprf3-5GM)
 - [Learning Lerna From the Lerna Team](https://www.youtube.com/watch?v=HqPOoU35xzA&t=284s)
 - [Lerna, Vite, Storybook - Blog](https://betterprogramming.pub/lerna-monorepo-with-vite-and-storybook-e29e54559214) | [Repo Link](https://github.com/antonkalik/lerna-monorepo-boilerplate/blob/main/vite.config.ts#L7)

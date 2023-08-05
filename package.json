@@ -9,6 +9,7 @@
     "lerna": "^7.1.4"
   },
   "scripts": {
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "build": "lerna run build"
   }
 }
