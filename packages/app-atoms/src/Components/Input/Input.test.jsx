@@ -14,19 +14,4 @@ describe("Input component", () => {
     const { container } = render(<Input />);
     expect(container.firstChild.tagName).toBe("INPUT");
   });
-
-  //   test("renders the correct font size based on the size prop", () => {
-  //     const { container } = render(<Input size="small" />);
-  //     expect(container.firstChild).toHaveStyle("font-size: 12px");
-  //   });
-
-  //   test("renders the correct width based on the size prop", () => {
-  //     const { container } = render(<Input size="large" />);
-  //     expect(container.firstChild).toHaveStyle("width: 80%");
-  //   });
-
-  //   test("renders the correct height based on the size prop", () => {
-  //     const { container } = render(<Input size="xl" />);
-  //     expect(container.firstChild).toHaveStyle("height: 9rem");
-  //   });
 });

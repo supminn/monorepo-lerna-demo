@@ -52,4 +52,3 @@ Modal.propTypes = {
   children: PropTypes.oneOf([PropTypes.element, PropTypes.string]),
 };
 export default Modal;
-// FIXME: Styling to look like a modal
