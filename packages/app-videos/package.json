@@ -1,7 +1,7 @@
 {
   "name": "app-videos",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
-    "app-atoms": "0.0.0",
-    "app-header": "0.0.0",
+    "app-atoms": "^1.0.0",
+    "app-header": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",
