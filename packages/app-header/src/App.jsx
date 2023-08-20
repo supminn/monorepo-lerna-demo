@@ -44,7 +44,7 @@ function App() {
           onClick={() => (window.location.href = "/")}
           style={{ cursor: "pointer" }}>
           <Image src={jsLogo} title="JS-logo" size="xs" />
-          <Typography variant={"h2"}>JS Videos</Typography>
+          <Typography variant={"h2"}>Videos</Typography>
         </FlexContainer>
         <FlexContainer>
           {email ? (
