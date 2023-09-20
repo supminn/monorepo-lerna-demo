@@ -6,6 +6,8 @@ Lerna uses Nx to detect packages in the workspace and dependencies between them.
 
 You can read more about the features of Lerna with Nx from [this blog](https://blog.nrwl.io/whats-new-with-lerna-6-5-4a4f69371504)
 
+Here's a [blog](https://betterprogramming.pub/lerna-monorepo-with-vite-and-storybook-e29e54559214) on how to create a monorepo with lerna, vite and storybook setup.
+
 ## Commands
 
 - `npx lerna init` - create a lerna monorepo
