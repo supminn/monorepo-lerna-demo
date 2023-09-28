@@ -13,3 +13,8 @@ Here's a [blog](https://betterprogramming.pub/lerna-monorepo-with-vite-and-story
 - `npx lerna init` - create a lerna monorepo
 - `npx lerna add-caching` - add Nx caching capabilities to lerna
 - `npx nx connect-to-nx-cloud` - remote caching mechanism
+
+## Link to my talk
+
+- [JSLovers at RazorPay Bengaluru](https://youtu.be/GSXLXuDviWQ?t=813)
+- [CityJS India at New Delhi](https://youtu.be/P9uRGfWqOq4?t=5804)
