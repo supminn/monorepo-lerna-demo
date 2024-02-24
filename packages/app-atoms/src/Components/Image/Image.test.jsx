@@ -10,6 +10,6 @@ describe("Image", () => {
     render(<Image src="test.jpg" title="Test image" size="small" />);
     const imageElement = screen.getByAltText(/test image/i);
     expect(imageElement).toBeInTheDocument();
-    // expect(imageElement).toHaveStyleRule("width: 6rem");
+    expect(imageElement).toHaveStyleRule("width: 6rem");
   });
 });
